@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 const navItems = [
 	{ name: "Home", path: "#home" },
 	{ name: "About", path: "#about" },
-	{ name: "Apps", path: "#apps" },
+	{ name: "Projects", path: "#projects" },
 	{ name: "Contact", path: "#contact" },
 ];
 
@@ -35,11 +35,13 @@ const NavBar = () => {
 		>
 			<div className="container flex items-center justify-between px-6">
 				<a className="text-2xl font-bold text-primary flex items-center">
-					<span className="relative z-10">Sykblock Overhaul</span>
+					<span className="relative z-10 select-none">
+						Sykblock Overhaul
+					</span>
 				</a>
 
 				{/* Desktop Navigation */}
-				<div className="hidden md:flex space-x-10 mr-10">
+				<div className="hidden md:flex space-x-10 mr-10 select-none">
 					{navItems.map((item, key) => (
 						<a
 							key={key}

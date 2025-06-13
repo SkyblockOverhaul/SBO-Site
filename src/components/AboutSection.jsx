@@ -39,23 +39,23 @@ const AboutSection = () => {
 	return (
 		<section id="about" className="py-24 px-4 relative">
 			<div className="container mx-auto max-w-5xl">
-				<h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+				<h2 className="text-3xl md:text-4xl font-bold mb-12 text-center select-none">
 					About <span className="text-primary"> Us</span>
 				</h2>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 					<div className="space-y-6">
-						<h3 className="text-2xl font-semibold">
+						<h3 className="text-2xl font-semibold select-none">
 							Passionate Mod & Web App Developers
 						</h3>
-						<p className="text-foreground/80">
+						<p className="text-foreground/80 select-none">
 							We are two students in the IT sector with experience
 							in React, Python, JavaScript, and TypeScript. Being
 							mostly self-taught, we constantly strive to improve
 							our skills and broaden our knowledge.
 						</p>
 
-						<p className="text-foreground/80">
+						<p className="text-foreground/80 select-none">
 							We're also passionate gamers — especially active in
 							Hypixel SkyBlock, where we're developing a mod to
 							enhance the gameplay experience. Our love for gaming
@@ -63,7 +63,7 @@ const AboutSection = () => {
 							that truly benefit the community.
 						</p>
 
-						<p className="text-foreground/80">
+						<p className="text-foreground/80 select-none">
 							Our goal is to create high-quality mods and web
 							applications that improve the gaming experience.
 							We're passionate about what we do and always eager
@@ -102,10 +102,10 @@ const AboutSection = () => {
 									<Code className="h-6 w-6 text-primary"></Code>
 								</div>
 								<div className="text-left">
-									<h4 className="text-lg font-semibold">
+									<h4 className="text-lg font-semibold select-none">
 										Mod Development
 									</h4>
-									<p className="text-foreground/80">
+									<p className="text-foreground/80 select-none">
 										Creating mods to enhance the Hypixel
 										SkyBlock experience.
 									</p>
@@ -118,10 +118,10 @@ const AboutSection = () => {
 									<Globe className="h-6 w-6 text-primary"></Globe>
 								</div>
 								<div className="text-left">
-									<h4 className="text-lg font-semibold">
+									<h4 className="text-lg font-semibold select-none">
 										Web Applications
 									</h4>
-									<p className="text-foreground/80">
+									<p className="text-foreground/80 select-none">
 										Building web apps to complement our mods
 										and enhance user experience.
 									</p>
@@ -134,10 +134,10 @@ const AboutSection = () => {
 									<GraduationCap className="h-6 w-6 text-primary"></GraduationCap>
 								</div>
 								<div className="text-left">
-									<h4 className="text-lg font-semibold">
+									<h4 className="text-lg font-semibold select-none">
 										Self-Taught Learning
 									</h4>
-									<p className="text-foreground/80">
+									<p className="text-foreground/80 select-none">
 										Constantly improving our skills through
 										self-study and practical experience.
 									</p>
