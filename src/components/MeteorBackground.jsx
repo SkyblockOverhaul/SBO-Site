@@ -24,7 +24,7 @@ const MeteorBackground = () => {
 		const newMeteors = Array.from({ length: meteorCount }, (_, i) => ({
 			id: i,
 			size: Math.random() * 2 + 1,
-			x: Math.random() * 100,
+			x: Math.random() * 80,
 			y: Math.random() * 40,
 			delay: Math.random() * 15,
 			animationDuration: Math.random() * 3 + 3,

@@ -3,6 +3,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import StarBackground from "@/components/StarBackground";
 import MeteorBackground from "@/components/MeteorBackground";
 import NavBar from "@/components/NavBar";
+import HomeSection from "@/components/HomeSection";
 
 const Home = () => {
 	return (
@@ -18,7 +19,9 @@ const Home = () => {
 			<NavBar />
 
 			{/* Main Content */}
-
+			<main>
+				<HomeSection />
+			</main>
 			{/* Footer */}
 		</div>
 	);
