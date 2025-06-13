@@ -1,10 +1,21 @@
 import React from "react";
+import { useTheme } from "@/context/ThemeContext";
 
 const StarBackground = () => {
 	const [stars, setStars] = React.useState([]);
+	const { theme } = useTheme();
 
 	React.useEffect(() => {
 		generateStars();
+
+		const handleResize = () => {
+			generateStars();
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, []);
 
 	const generateStars = () => {
@@ -37,6 +48,11 @@ const StarBackground = () => {
 						top: `${star.y}%`,
 						opacity: star.opacity,
 						animationDuration: `${star.animationDuration}s`,
+						backgroundColor: theme === "dark" ? "white" : "black",
+						boxShadow:
+							theme === "dark"
+								? "0 0 10px rgba(255, 255, 255, 0.4)"
+								: "0 0 10px rgba(0, 0, 0, 0.4)",
 					}}
 				/>
 			))}

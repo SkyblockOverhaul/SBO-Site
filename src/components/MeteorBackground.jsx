@@ -1,9 +1,21 @@
 import React from "react";
+import { useTheme } from "@/context/ThemeContext";
 
 const MeteorBackground = () => {
 	const [meteors, setMeteors] = React.useState([]);
+	const { theme } = useTheme();
+
 	React.useEffect(() => {
 		generateMeteors();
+
+		const handleResize = () => {
+			generateMeteors();
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, []);
 
 	const generateMeteors = () => {
@@ -13,7 +25,7 @@ const MeteorBackground = () => {
 			id: i,
 			size: Math.random() * 2 + 1,
 			x: Math.random() * 100,
-			y: Math.random() * 20,
+			y: Math.random() * 40,
 			delay: Math.random() * 15,
 			animationDuration: Math.random() * 3 + 3,
 		}));
@@ -34,6 +46,14 @@ const MeteorBackground = () => {
 						top: `${meteor.y}%`,
 						animationDelay: `${meteor.delay}`,
 						animationDuration: `${meteor.animationDuration}s`,
+						background:
+							theme === "dark"
+								? "linear-gradient(to right, white, white, transparent)"
+								: "linear-gradient(to right, black, black, transparent)",
+						boxShadow:
+							theme === "dark"
+								? "0 0 10px rgba(255, 255, 255, 0.4)"
+								: "0 0 10px rgba(0, 0, 0, 0.4)",
 					}}
 				/>
 			))}
