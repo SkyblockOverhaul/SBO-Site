@@ -4,6 +4,7 @@ import StarBackground from "@/components/StarBackground";
 import MeteorBackground from "@/components/MeteorBackground";
 import NavBar from "@/components/NavBar";
 import HomeSection from "@/components/HomeSection";
+import AboutSection from "@/components/AboutSection";
 
 const Home = () => {
 	return (
@@ -21,6 +22,7 @@ const Home = () => {
 			{/* Main Content */}
 			<main>
 				<HomeSection />
+				<AboutSection />
 			</main>
 			{/* Footer */}
 		</div>

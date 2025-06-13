@@ -3,6 +3,7 @@ import cn from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
+	{ name: "Home", path: "#home" },
 	{ name: "About", path: "#about" },
 	{ name: "Apps", path: "#apps" },
 	{ name: "Contact", path: "#contact" },
@@ -55,7 +56,7 @@ const NavBar = () => {
 				{/* Mobile Menu Button */}
 				<button
 					onClick={() => setIsMenuOpen((prev) => !prev)}
-					className="md:hidden p-2 text-foreground z-50"
+					className="md:hidden p-1 text-foreground mr-4 z-50"
 					arial-label={isMenuOpen ? "Close menu" : "Open menu"}
 				>
 					{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
