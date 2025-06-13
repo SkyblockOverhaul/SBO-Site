@@ -29,37 +29,35 @@ const NavBar = () => {
 			className={cn(
 				"fixed w-full z-40 transition-all duration-300",
 				isScrolled
-					? "py-3 bg-background/80 backdrop-blur-md shadow-xs"
-					: "py-5"
+					? "py-4 bg-background/90 backdrop-blur-md shadow-lg"
+					: "py-6"
 			)}
 		>
-			<div className="container flex items-center justify-between">
-				<a className="text-xl font-bold text-primary flex items-center">
-					<span className="relative z-10 ">Sykblock Overhaul</span>
+			<div className="container flex items-center justify-between px-6">
+				<a className="text-2xl font-bold text-primary flex items-center">
+					<span className="relative z-10">Sykblock Overhaul</span>
 				</a>
 
 				{/* Desktop Navigation */}
-				<div className="hidden md:flex space-x-8 mr-10">
+				<div className="hidden md:flex space-x-10 mr-10">
 					{navItems.map((item, key) => (
 						<a
 							key={key}
 							href={item.path}
-							className="text-foreground/80 hover:text-primary transition-colors duration-300"
+							className="text-foreground/80 hover:text-primary transition-colors duration-300 text-lg"
 						>
 							{item.name}
 						</a>
 					))}
 				</div>
 
-				{/* Mobile Navigation */}
-
 				{/* Mobile Menu Button */}
 				<button
 					onClick={() => setIsMenuOpen((prev) => !prev)}
-					className="md:hidden p-1 text-foreground mr-4 z-50"
+					className="md:hidden p-2 text-foreground mr-4 z-50"
 					arial-label={isMenuOpen ? "Close menu" : "Open menu"}
 				>
-					{isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+					{isMenuOpen ? <X size={28} /> : <Menu size={28} />}
 				</button>
 
 				<div
@@ -71,7 +69,7 @@ const NavBar = () => {
 							: "opacity-0 pointer-events-none"
 					)}
 				>
-					<div className="flex flex-col space-y-8 text-xl">
+					<div className="flex flex-col space-y-10 text-2xl">
 						{navItems.map((item, key) => (
 							<a
 								key={key}
