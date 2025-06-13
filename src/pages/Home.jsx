@@ -2,6 +2,7 @@ import React from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import StarBackground from "@/components/StarBackground";
 import MeteorBackground from "@/components/MeteorBackground";
+import NavBar from "@/components/NavBar";
 
 const Home = () => {
 	return (
@@ -14,6 +15,7 @@ const Home = () => {
 			<StarBackground />
 
 			{/* Navigation Bar */}
+			<NavBar />
 
 			{/* Main Content */}
 
