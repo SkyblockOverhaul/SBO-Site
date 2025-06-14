@@ -22,23 +22,45 @@ const ProjectsSection = () => {
 	const [data, setData] = React.useState([]);
 
 	React.useEffect(() => {
-		Promise.all(
-			repos.map((repo) =>
-				fetch(repo.url)
-					.then((res) => res.json())
-					.then((json) => ({
-						name: repo.name,
-						stars: json.stargazers_count,
-						forks: json.forks_count,
-					}))
-			)
-		).then((results) => {
-			const stats = {};
-			results.forEach((repo) => {
-				stats[repo.name] = { stars: repo.stars, forks: repo.forks };
-			});
-			setData(stats);
-		});
+		const fetchData = async () => {
+			try {
+				const results = await Promise.all(
+					repos.map(async (repo) => {
+						const [repoRes, langRes] = await Promise.all([
+							fetch(repo.url).then((res) => res.json()),
+							fetch(`${repo.url}/languages`).then((res) =>
+								res.json()
+							),
+						]);
+
+						return {
+							name: repo.name,
+							stars: repoRes.stargazers_count,
+							forks: repoRes.forks_count,
+							languages: [
+								...Object.keys(langRes),
+								"ChatTriggers",
+							],
+						};
+					})
+				);
+
+				const stats = {};
+				results.forEach((repo) => {
+					stats[repo.name] = {
+						stars: repo.stars,
+						forks: repo.forks,
+						languages: repo.languages,
+					};
+				});
+
+				setData(stats);
+			} catch (err) {
+				console.error("Failed to fetch GitHub data:", err);
+			}
+		};
+
+		fetchData();
 	}, []);
 
 	const projects = {
@@ -48,6 +70,7 @@ const ProjectsSection = () => {
 				"A feature-rich ChatTriggers module for Minecraft 1.8.9 designed primarily for the Diana event.",
 			stars: data["SBO"]?.stars || 0,
 			forks: data["SBO"]?.forks || 0,
+			languages: data["SBO"]?.languages || [],
 			features: [
 				"Burrow Detection & Guessing for Diana",
 				"Diana Stats Tracker (loot, kills, MF)",
@@ -72,6 +95,7 @@ const ProjectsSection = () => {
 				"A sub-module of SBO that adds an in-game party finder for many different aspects of the game.",
 			stars: data["SBOPF"]?.stars || 0,
 			forks: data["SBOPF"]?.forks || 0,
+			languages: data["SBOPF"]?.languages || [],
 			features: [
 				"In-game Party Finder",
 				"Easy Party Management",
@@ -157,6 +181,20 @@ const ProjectsSection = () => {
 									{projects[activeProject].forks} forks
 								</span>
 							</div>
+						</div>
+
+						{/* Language Tags */}
+						<div className="flex flex-wrap gap-2">
+							{projects[activeProject].languages.map(
+								(lang, index) => (
+									<span
+										key={index}
+										className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary select-none"
+									>
+										{lang}
+									</span>
+								)
+							)}
 						</div>
 
 						<div className="bg-muted/30 backdrop-blur-sm rounded-lg p-3 md:p-4 font-mono text-xs md:text-sm border border-border/50">
