@@ -42,6 +42,7 @@ const HomeSection = () => {
 					</div>
 				</div>
 			</div>
+			<ScrollIndicator />
 		</section>
 	);
 };

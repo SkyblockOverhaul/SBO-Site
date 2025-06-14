@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import HomeSection from "@/components/HomeSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
 
 const Home = () => {
 	return (
@@ -21,7 +22,10 @@ const Home = () => {
 			<NavBar />
 
 			{/* Main Content */}
-			<main className="h-screen md:snap-y md:snap-mandatory overflow-y-scroll relative z-10 scroll-smooth" style={{ scrollBehavior: 'smooth' }}>
+			<main
+				className="h-screen md:snap-y md:snap-mandatory overflow-y-scroll relative z-10 scroll-smooth"
+				style={{ scrollBehavior: "smooth" }}
+			>
 				<div className="min-h-screen md:h-screen md:snap-start">
 					<HomeSection />
 				</div>
@@ -30,6 +34,9 @@ const Home = () => {
 				</div>
 				<div className="min-h-screen md:h-screen md:snap-start">
 					<ProjectsSection />
+				</div>
+				<div className="min-h-screen md:h-screen md:snap-start">
+					<ContactSection />
 				</div>
 			</main>
 			{/* Footer */}
