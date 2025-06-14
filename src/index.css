@@ -106,6 +106,27 @@
 	body {
 		@apply bg-background text-foreground transition-colors duration-300;
 		font-feature-settings: "clig" 1, "calt" 1;
+		scrollbar-width: thin;
+		scrollbar-color: hsl(var(--primary)) transparent;
+	}
+
+	body::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	body::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: hsl(var(--primary));
+		border-radius: 20px;
+		border: 2px solid transparent;
+		background-clip: padding-box;
+	}
+
+	body::-webkit-scrollbar-thumb:hover {
+		background-color: hsl(var(--primary) / 0.8);
 	}
 }
 
