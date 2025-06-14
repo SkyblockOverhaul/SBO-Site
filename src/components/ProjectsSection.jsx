@@ -87,12 +87,12 @@ const ProjectsSection = () => {
 			className="min-h-screen flex items-center py-12 md:py-20 px-4 md:px-8"
 		>
 			<div className="max-w-4xl mx-auto w-full">
-				<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
-					 <span className="text-primary">Our</span> Projects
+				<h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 select-none">
+					<span className="text-primary">Our</span> Projects
 				</h2>
 
 				{/* Navigation Tabs */}
-				<div className="flex justify-center gap-3 md:gap-4 mb-6 md:mb-8">
+				<div className="flex justify-center gap-3 md:gap-4 mb-6 md:mb-8 select-none">
 					<button
 						onClick={() => setActiveProject("sbo")}
 						className={`px-4 md:px-6 py-2 rounded-md transition-all duration-300 text-sm md:text-base relative overflow-hidden group ${
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
 						<div className="flex items-center justify-between">
 							<div className="flex items-center gap-2 md:gap-3">
 								<Code2 className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-								<h3 className="text-xl md:text-3xl font-semibold">
+								<h3 className="text-xl md:text-3xl font-semibold select-none">
 									{projects[activeProject].title}
 								</h3>
 							</div>
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
 								rel="noopener noreferrer"
 								className="group flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-lg bg-muted/50 hover:bg-primary/10 transition-all duration-300"
 							>
-								<span className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors">
+								<span className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-primary transition-colors select-none">
 									View on GitHub
 								</span>
 								<ExternalLink className="h-3 w-3 md:h-4 md:w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
@@ -145,13 +145,13 @@ const ProjectsSection = () => {
 						</div>
 
 						<div className="flex items-center gap-3 md:gap-4 text-xs md:text-sm">
-							<div className="flex items-center gap-1 bg-muted/50 px-2 md:px-3 py-1 rounded-full">
+							<div className="flex items-center gap-1 bg-muted/50 px-2 md:px-3 py-1 rounded-full select-none">
 								<Star className="h-3 w-3 md:h-4 md:w-4 text-yellow-500" />
 								<span>
 									{projects[activeProject].stars} stars
 								</span>
 							</div>
-							<div className="flex items-center gap-1 bg-muted/50 px-2 md:px-3 py-1 rounded-full">
+							<div className="flex items-center gap-1 bg-muted/50 px-2 md:px-3 py-1 rounded-full select-none">
 								<GitFork className="h-3 w-3 md:h-4 md:w-4 text-blue-500" />
 								<span>
 									{projects[activeProject].forks} forks
@@ -168,7 +168,7 @@ const ProjectsSection = () => {
 								</div>
 								<div className="flex items-center gap-2 ml-2">
 									<BookOpen className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-									<span className="font-semibold">
+									<span className="font-semibold select-none">
 										README.md
 									</span>
 								</div>
