@@ -64,6 +64,12 @@ const InputSection = () => {
 	const isFormValid =
 		username.trim() !== "" && beacon && communityShopMf && nutcrackerMf;
 
+	const handleKeyPress = (e) => {
+		if (e.key === "Enter" && isFormValid) {
+			handleSearch();
+		}
+	};
+
 	return (
 		<section className="relative min-h-screen flex flex-col items-center justify-center px-4 mb-8">
 			<h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-12 text-center select-none">
@@ -81,6 +87,7 @@ const InputSection = () => {
 							<Input
 								value={username}
 								onChange={(e) => setUsername(e.target.value)}
+								onKeyDown={handleKeyPress}
 								placeholder="Enter Username"
 								icon={<Search className="size-5" />}
 								iconPosition="left"
