@@ -56,9 +56,12 @@ const Dropdown = ({ options, value, onChange, placeholder }) => {
 					"text-foreground/90"
 				)}
 			>
-				<span className="block truncate">
-					{selectedOption ? selectedOption.label : placeholder}
-				</span>
+				<div className="flex items-center gap-2">
+					<span className="text-muted-foreground">{placeholder}:</span>
+					<span className="font-medium">
+						{selectedOption ? selectedOption.value : "0"}
+					</span>
+				</div>
 				<ChevronDown
 					className={cn(
 						"size-5 transition-transform duration-200",

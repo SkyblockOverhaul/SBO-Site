@@ -46,8 +46,8 @@ const InputSection = () => {
 	];
 
 	const handleSearch = () => {
-		// Set party size to 1 if empty
-		const finalPartySize = partySize === "" ? "1" : partySize;
+		// Set party size to 0 if empty
+		const finalPartySize = partySize === "" ? "0" : partySize;
 
 		console.log({
 			username,
@@ -101,16 +101,17 @@ const InputSection = () => {
 								<button
 									type="button"
 									onClick={() => setShowTooltip(!showTooltip)}
-									className="absolute right-3 top-1/2 -translate-y-1/2 group"
+									className="absolute right-3 top-1/2 -translate-y-1/2 group z-[9999]"
 								>
 									<Info className="size-5 text-foreground/60" />
 									<div
 										className={cn(
-											"absolute right-0 top-full mt-2 w-64 p-2",
+											"fixed right-4 top-1/2 -translate-y-1/2 mt-2 w-64 p-2",
 											"bg-background/95 backdrop-blur-sm",
 											"border border-border/50 rounded-lg shadow-lg",
 											"text-sm text-foreground/90",
-											"transition-all duration-200 z-50",
+											"transition-all duration-200",
+											"z-[9999]",
 											"md:opacity-0 md:invisible md:group-hover:opacity-100 md:group-hover:visible",
 											"md:pointer-events-none",
 											"md:group-hover:pointer-events-auto",
@@ -119,10 +120,17 @@ const InputSection = () => {
 												: "opacity-0 invisible"
 										)}
 									>
-										Party size affects the Magic Find
-										calculation. Each additional player in
-										your party increases the Magic Find
-										bonus.
+										This is the party size to determine
+										Legion/Bobbin Time bonuses.
+										<br />
+										<br />
+										• Legion max party size: 20 players
+										<br />
+										• Bobbin Time max party size: 10 players
+										<br />
+										<br />
+										Note: You are not included in the party
+										size count.
 									</div>
 								</button>
 							</div>
