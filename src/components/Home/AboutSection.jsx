@@ -44,7 +44,6 @@ const AboutSection = () => {
 							>
 								<DiscordIcon />
 								Discord
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 							<a
 								href="https://github.com/SkyblockOverhaul"
@@ -54,7 +53,6 @@ const AboutSection = () => {
 							>
 								<GithubIcon />
 								Github
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 							<a
 								href="https://www.patreon.com/Skyblock_Overhaul"
@@ -64,7 +62,6 @@ const AboutSection = () => {
 							>
 								<PatreonIcon />
 								Patreon
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 						</div>
 					</div>

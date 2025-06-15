@@ -6,7 +6,13 @@ const HomeSection = () => {
 	return (
 		<section
 			id="home"
-			className="relative min-h-screen flex flex-col items-center justify-center px-4 mb-8"
+			className={cn(
+				"relative min-h-[calc(100vh-4rem)]",
+				"flex flex-col items-center justify-center",
+				"px-4 py-8 md:py-0",
+				"mt-16 md:mt-0",
+				"overflow-y-auto"
+			)}
 		>
 			<div className="container max-w-4xl mx-auto text-center z-10">
 				<div className="space-y-6">
@@ -34,10 +40,13 @@ const HomeSection = () => {
 						Hypixel Skyblock.
 					</p>
 
-					{/* Call to Action Button */}
-					<div className="pt-4 opacity-0 animate-fade-in-delay-4">
+					{/* Buttons */}
+					<div className="pt-4 opacity-0 animate-fade-in-delay-4 flex gap-4 justify-center">
 						<a href="#projects" className="cosmic-button">
-							View Our Work
+							View Projects
+						</a>
+						<a href="#apps" className="cosmic-button">
+							View Apps
 						</a>
 					</div>
 				</div>

@@ -64,19 +64,13 @@ const InputSection = () => {
 	const isFormValid =
 		username.trim() !== "" && beacon && communityShopMf && nutcrackerMf;
 
-	const handleKeyPress = (e) => {
-		if (e.key === "Enter" && isFormValid) {
-			handleSearch();
-		}
-	};
-
 	return (
-		<section className="relative min-h-screen flex flex-col items-center justify-center px-4 mb-8">
-			<h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-12 text-center select-none">
-				<span className="text-primary">Magic</span> Find{" "}
-				<span className="text-primary">Calculator</span>
-			</h2>
-			<div className="container max-w-4xl mx-auto z-10">
+		<section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center px-4 py-8 md:py-0 md:justify-center">
+			<div className="w-full max-w-4xl mx-auto">
+				<h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-12 text-center select-none">
+					<span className="text-primary">Magic</span> Find{" "}
+					<span className="text-primary">Calculator</span>
+				</h2>
 				<div className="space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg">
 					{/* Player Information */}
 					<div className="space-y-4  select-none">
@@ -87,7 +81,6 @@ const InputSection = () => {
 							<Input
 								value={username}
 								onChange={(e) => setUsername(e.target.value)}
-								onKeyDown={handleKeyPress}
 								placeholder="Enter Username"
 								icon={<Search className="size-5" />}
 								iconPosition="left"

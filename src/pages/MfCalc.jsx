@@ -15,7 +15,7 @@ const MfCalc = () => {
 			<NavBar />
 
 			{/* Main Content */}
-			<main className="h-screen relative z-10">
+			<main className="relative z-10 pt-16 md:pt-0">
 				<InputSection />
 			</main>
 		</div>

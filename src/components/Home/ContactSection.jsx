@@ -47,10 +47,11 @@ const ContactSection = () => {
 						Get <span className="text-primary"> In</span> Touch
 					</h2>
 					<p className="text-center mb-4 max-w-2xl mx-auto select-none">
-						Want to Contribute to our project or have any questions?
-						Feel free to reach out to us through our Discord server
-						or GitHub. We love hearing from the community and are
-						always open to new ideas and contributions!
+						Want to Contribute to our projects or have any
+						questions? Feel free to reach out to us through our
+						Discord server or via Mail. We love hearing from the
+						community and are always open to new ideas and
+						contributions!
 					</p>
 				</div>
 
@@ -82,7 +83,6 @@ const ContactSection = () => {
 										</span>
 									</p>
 								</div>
-								<ExternalLink className="ml-auto h-4 w-4 text-foreground/50 group-hover:text-primary transition-colors" />
 							</a>
 							<a
 								href="https://discord.gg/QvM6b9jsJD"
@@ -101,7 +101,6 @@ const ContactSection = () => {
 										Join our community
 									</p>
 								</div>
-								<ExternalLink className="ml-auto h-4 w-4 text-foreground/50 group-hover:text-primary transition-colors" />
 							</a>
 						</div>
 					</div>
