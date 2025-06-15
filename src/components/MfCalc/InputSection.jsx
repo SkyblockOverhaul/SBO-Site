@@ -46,10 +46,12 @@ const InputSection = () => {
 	];
 
 	const handleSearch = () => {
-		// TODO: Implement search functionality
+		// Set party size to 1 if empty
+		const finalPartySize = partySize === "" ? "1" : partySize;
+
 		console.log({
 			username,
-			partySize,
+			partySize: finalPartySize,
 			cookieBuff,
 			necronsLadder,
 			beacon,
@@ -57,6 +59,10 @@ const InputSection = () => {
 			nutcrackerMf,
 		});
 	};
+
+	// Check if all required fields are filled
+	const isFormValid =
+		username.trim() !== "" && beacon && communityShopMf && nutcrackerMf;
 
 	return (
 		<section className="relative min-h-screen flex flex-col items-center justify-center px-4 mb-8">
@@ -67,7 +73,7 @@ const InputSection = () => {
 			<div className="container max-w-4xl mx-auto z-10">
 				<div className="space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg">
 					{/* Player Information */}
-					<div className="space-y-4">
+					<div className="space-y-4  select-none">
 						<h3 className="text-xl font-semibold text-foreground/90 mb-4">
 							Player Information
 						</h3>
@@ -108,7 +114,9 @@ const InputSection = () => {
 											"md:opacity-0 md:invisible md:group-hover:opacity-100 md:group-hover:visible",
 											"md:pointer-events-none",
 											"md:group-hover:pointer-events-auto",
-											showTooltip ? "opacity-100 visible" : "opacity-0 invisible"
+											showTooltip
+												? "opacity-100 visible"
+												: "opacity-0 invisible"
 										)}
 									>
 										Party size affects the Magic Find
@@ -122,7 +130,7 @@ const InputSection = () => {
 					</div>
 
 					{/* Buffs and Effects */}
-					<div className="space-y-4">
+					<div className="space-y-4 select-none">
 						<h3 className="text-xl font-semibold text-foreground/90 mb-4">
 							Buffs & Effects
 						</h3>
@@ -145,7 +153,7 @@ const InputSection = () => {
 					</div>
 
 					{/* Magic Find Sources */}
-					<div className="space-y-4">
+					<div className="space-y-4  select-none">
 						<h3 className="text-xl font-semibold text-foreground/90 mb-4">
 							Magic Find Sources
 						</h3>
@@ -172,9 +180,10 @@ const InputSection = () => {
 					</div>
 
 					{/* Search Button */}
-					<div className="pt-4 flex justify-center">
+					<div className="pt-4 flex justify-center  select-none">
 						<button
 							onClick={handleSearch}
+							disabled={!isFormValid}
 							className={cn(
 								"w-full md:w-auto md:min-w-[200px] px-8 py-3",
 								"bg-primary text-primary-foreground",
@@ -183,7 +192,9 @@ const InputSection = () => {
 								"hover:bg-primary/90 hover:shadow-lg",
 								"active:scale-95",
 								"focus:outline-none focus:ring-2 focus:ring-primary/50",
-								"flex items-center justify-center gap-2"
+								"flex items-center justify-center gap-2",
+								!isFormValid &&
+									"opacity-50 cursor-not-allowed hover:bg-primary hover:shadow-none"
 							)}
 						>
 							<Search className="size-5" />
