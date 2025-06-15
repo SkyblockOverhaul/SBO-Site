@@ -42,11 +42,11 @@ const ContactSection = () => {
 	return (
 		<section
 			id="contact"
-			className="h-full flex items-center justify-center py-24 px-4 relative"
+			className="h-full flex items-center justify-center py-16 px-4 relative"
 		>
 			<div className="container mx-auto max-w-5xl">
-				<div className="space-y-4 md:space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg mb-12">
-					<h2 className="text-3xl md:text-4xl font-bold mb-4 text-center select-none">
+				<div className="space-y-3 md:space-y-4 bg-card/50 backdrop-blur-sm p-5 md:p-6 rounded-lg border border-border/50 shadow-lg mb-8">
+					<h2 className="text-2xl md:text-3xl font-bold mb-3 text-center select-none">
 						Get <span className="text-primary"> In</span> Touch
 					</h2>
 					<p className="text-center mb-4 max-w-2xl mx-auto select-none">
@@ -58,17 +58,17 @@ const ContactSection = () => {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-					<div className="space-y-8 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg">
-						<h3 className="text-2xl font-semibold mb-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div className="space-y-6 bg-card/50 backdrop-blur-sm p-5 md:p-6 rounded-lg border border-border/50 shadow-lg">
+						<h3 className="text-xl font-semibold mb-4">
 							Contact Information
 						</h3>
-						<div className="space-y-6">
+						<div className="space-y-4">
 							<a
 								href="mailto:skyblockoverhaul@gmail.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-start gap-4 p-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
+								className="flex items-start gap-3 p-3 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
 							>
 								<div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
 									<Mail className="h-6 w-6 text-primary" />
@@ -91,7 +91,7 @@ const ContactSection = () => {
 								href="https://discord.gg/QvM6b9jsJD"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-start gap-4 p-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
+								className="flex items-start gap-3 p-3 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
 							>
 								<div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
 									<DiscordIcon />
@@ -108,19 +108,19 @@ const ContactSection = () => {
 						</div>
 					</div>
 
-					<div className="space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg">
-						<h3 className="text-2xl font-semibold mb-6 select-none">
+					<div className="space-y-4 bg-card/50 backdrop-blur-sm p-5 md:p-6 rounded-lg border border-border/50 shadow-lg">
+						<h3 className="text-xl font-semibold mb-4 select-none">
 							Send Message
 						</h3>
 						<form
 							ref={form}
 							onSubmit={handleSubmit}
-							className="space-y-4"
+							className="space-y-3"
 						>
 							<div>
 								<label
 									htmlFor="name"
-									className="block text-sm font-medium mb-2 select-none"
+									className="block text-sm font-medium mb-1 select-none"
 								>
 									Your Name
 								</label>
@@ -129,14 +129,14 @@ const ContactSection = () => {
 									id="name"
 									name="user_name"
 									placeholder="John Doe"
-									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+									className="w-full p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
 									required
 								/>
 							</div>
 							<div>
 								<label
 									htmlFor="email"
-									className="block text-sm font-medium mb-2 select-none"
+									className="block text-sm font-medium mb-1 select-none"
 								>
 									Your Email
 								</label>
@@ -145,23 +145,23 @@ const ContactSection = () => {
 									id="email"
 									name="user_email"
 									placeholder="john.doe@example.com"
-									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+									className="w-full p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
 									required
 								/>
 							</div>
 							<div>
 								<label
 									htmlFor="message"
-									className="block text-sm font-medium mb-2 select-none"
+									className="block text-sm font-medium mb-1 select-none"
 								>
 									Your Message
 								</label>
 								<textarea
 									id="message"
 									name="message"
-									rows="4"
+									rows="3"
 									placeholder="Write your message here..."
-									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-colors placeholder:text-foreground/50"
+									className="w-full p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-colors placeholder:text-foreground/50"
 									required
 								></textarea>
 							</div>
