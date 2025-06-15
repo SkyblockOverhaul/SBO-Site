@@ -146,7 +146,7 @@ const ProjectsSection = () => {
 				</div>
 
 				{/* Project Card */}
-				<div className="bg-card/30 backdrop-blur-sm rounded-lg p-4 md:p-8 shadow-lg border border-border/50">
+				<div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 md:p-8 shadow-lg border border-border/50">
 					<div className="space-y-4 md:space-y-6">
 						<div className="flex items-center justify-between">
 							<div className="flex items-center gap-2 md:gap-3">
