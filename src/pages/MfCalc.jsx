@@ -6,7 +6,7 @@ import InputSection from "@/components/MfCalc/InputSection";
 
 const MfCalc = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+		<div className="h-screen md:h-screen bg-background text-foreground overflow-x-hidden overflow-y-auto md:overflow-y-hidden">
 			{/* Background Effects */}
 			<MeteorBackground />
 			<StarBackground />
@@ -15,7 +15,7 @@ const MfCalc = () => {
 			<NavBar />
 
 			{/* Main Content */}
-			<main className="relative z-10 pt-16 md:pt-0">
+			<main className="relative z-10 pt-16 md:pt-0 h-full overflow-y-auto md:overflow-y-hidden">
 				<InputSection />
 			</main>
 		</div>

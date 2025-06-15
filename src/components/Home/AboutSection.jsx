@@ -67,7 +67,7 @@ const AboutSection = () => {
 					</div>
 
 					<div className="grid grid-cols-1 gap-4 md:gap-6">
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<Code className="h-5 w-5 md:h-6 md:w-6 text-primary"></Code>
@@ -83,7 +83,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<Globe className="h-5 w-5 md:h-6 md:w-6 text-primary"></Globe>
@@ -99,7 +99,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<GraduationCap className="h-5 w-5 md:h-6 md:w-6 text-primary"></GraduationCap>

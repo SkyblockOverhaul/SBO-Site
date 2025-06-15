@@ -40,7 +40,10 @@ const ContactSection = () => {
 	};
 
 	return (
-		<section id="contact" className="py-24 px-4 relative">
+		<section
+			id="contact"
+			className="h-full flex items-center justify-center py-24 px-4 relative"
+		>
 			<div className="container mx-auto max-w-5xl">
 				<div className="space-y-4 md:space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg mb-12">
 					<h2 className="text-3xl md:text-4xl font-bold mb-4 text-center select-none">
@@ -65,7 +68,7 @@ const ContactSection = () => {
 								href="mailto:skyblockoverhaul@gmail.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-start gap-4 p-4 bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/50 transition-colors group"
+								className="flex items-start gap-4 p-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
 							>
 								<div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
 									<Mail className="h-6 w-6 text-primary" />
@@ -88,7 +91,7 @@ const ContactSection = () => {
 								href="https://discord.gg/QvM6b9jsJD"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-start gap-4 p-4 bg-card/30 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/50 transition-colors group"
+								className="flex items-start gap-4 p-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg hover:bg-card/70 transition-colors group"
 							>
 								<div className="p-2 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors shrink-0">
 									<DiscordIcon />
@@ -126,7 +129,7 @@ const ContactSection = () => {
 									id="name"
 									name="user_name"
 									placeholder="John Doe"
-									className="w-full p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
 									required
 								/>
 							</div>
@@ -142,7 +145,7 @@ const ContactSection = () => {
 									id="email"
 									name="user_email"
 									placeholder="john.doe@example.com"
-									className="w-full p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
+									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors"
 									required
 								/>
 							</div>
@@ -158,7 +161,7 @@ const ContactSection = () => {
 									name="message"
 									rows="4"
 									placeholder="Write your message here..."
-									className="w-full p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-colors placeholder:text-foreground/50"
+									className="w-full p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-colors placeholder:text-foreground/50"
 									required
 								></textarea>
 							</div>

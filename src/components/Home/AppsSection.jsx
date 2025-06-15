@@ -34,7 +34,7 @@ const AppsSection = () => {
 						className={`px-4 md:px-6 py-2 rounded-md transition-all duration-300 text-sm md:text-base relative overflow-hidden group ${
 							activeApp === "mfcalc"
 								? "bg-primary text-white"
-								: "bg-card/50 text-foreground/80 hover:bg-card/60"
+								: "bg-card/50 text-foreground/80 hover:bg-card/70"
 						}`}
 						onClick={() => setActiveApp("mfcalc")}
 					>
