@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import cn from "@/lib/utils";
 
-const Dropdown = ({ options, value, onChange, placeholder }) => {
+const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [menuPosition, setMenuPosition] = useState("bottom");
 	const dropdownRef = useRef(null);
@@ -91,7 +91,7 @@ const Dropdown = ({ options, value, onChange, placeholder }) => {
 					<button
 						key={option.value}
 						onClick={() => {
-							onChange(option.value);
+							onChange({ target: { name: name, value: option.value } });
 							setIsOpen(false);
 						}}
 						className={cn(

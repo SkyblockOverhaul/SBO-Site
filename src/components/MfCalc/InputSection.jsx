@@ -7,14 +7,37 @@ import cn from "@/lib/utils";
 
 const InputSection = () => {
 	// State management
-	const [username, setUsername] = useState("");
-	const [partySize, setPartySize] = useState("");
-	const [cookieBuff, setCookieBuff] = useState(true);
-	const [necronsLadder, setNecronsLadder] = useState(true);
-	const [beacon, setBeacon] = useState("6");
-	const [communityShopMf, setCommunityShopMf] = useState("5");
-	const [nutcrackerMf, setNutcrackerMf] = useState("5");
 	const [showTooltip, setShowTooltip] = useState(false);
+	const [form, setForm] = useState({
+		username: "",
+		partySize: "",
+		cookieBuff: true,
+		necronsLadder: true,
+		beacon: "6",
+		communityShopMf: "5",
+		nutcrackerMf: "5",
+	});
+
+	const handleChange = (e) => {
+		const { name, value, type, checked } = e.target;
+
+		// Validate party size input
+		if (name === "partySize") {
+			const numValue = parseInt(value);
+			setForm((prev) => ({
+				...prev,
+				[name]: isNaN(numValue)
+					? ""
+					: String(Math.max(1, Math.min(20, numValue))),
+			}));
+			return;
+		}
+
+		setForm((prev) => ({
+			...prev,
+			[name]: type === "checkbox" ? checked : value,
+		}));
+	};
 
 	// Dropdown options
 	const beaconOptions = [
@@ -47,22 +70,20 @@ const InputSection = () => {
 
 	const handleSearch = () => {
 		// Set party size to 0 if empty
-		const finalPartySize = partySize === "" ? "0" : partySize;
+		const finalPartySize = form.partySize === "" ? "0" : form.partySize;
 
 		console.log({
-			username,
+			...form,
 			partySize: finalPartySize,
-			cookieBuff,
-			necronsLadder,
-			beacon,
-			communityShopMf,
-			nutcrackerMf,
 		});
 	};
 
 	// Check if all required fields are filled
 	const isFormValid =
-		username.trim() !== "" && beacon && communityShopMf && nutcrackerMf;
+		form.username.trim() !== "" &&
+		form.beacon &&
+		form.communityShopMf &&
+		form.nutcrackerMf;
 
 	return (
 		<section className="relative min-h-screen flex flex-col items-center justify-center px-4 mb-8">
@@ -79,24 +100,26 @@ const InputSection = () => {
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<Input
-								value={username}
-								onChange={(e) => setUsername(e.target.value)}
+								value={form.username}
+								onChange={handleChange}
 								placeholder="Enter Username"
 								icon={<Search className="size-5" />}
 								iconPosition="left"
+								id="username"
+								name="username"
+								autoComplete="username"
 							/>
 							<div className="relative">
 								<Input
-									value={partySize}
-									onChange={(e) =>
-										setPartySize(e.target.value)
-									}
+									value={form.partySize}
+									onChange={handleChange}
 									placeholder="Party Size (1-20)"
 									type="number"
-									min="1"
-									max="20"
 									icon={<Users className="size-5" />}
 									iconPosition="left"
+									id="partySize"
+									name="partySize"
+									autoComplete="off"
 								/>
 								<button
 									type="button"
@@ -144,18 +167,18 @@ const InputSection = () => {
 						</h3>
 						<div className="flex flex-wrap gap-6">
 							<Checkbox
-								checked={cookieBuff}
-								onChange={(e) =>
-									setCookieBuff(e.target.checked)
-								}
+								checked={form.cookieBuff}
+								onChange={handleChange}
 								label="Cookie Buff"
+								id="cookieBuff"
+								name="cookieBuff"
 							/>
 							<Checkbox
-								checked={necronsLadder}
-								onChange={(e) =>
-									setNecronsLadder(e.target.checked)
-								}
+								checked={form.necronsLadder}
+								onChange={handleChange}
 								label="Necron's Ladder"
+								id="necronsLadder"
+								name="necronsLadder"
 							/>
 						</div>
 					</div>
@@ -168,21 +191,27 @@ const InputSection = () => {
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 							<Dropdown
 								options={beaconOptions}
-								value={beacon}
-								onChange={setBeacon}
+								value={form.beacon}
+								onChange={handleChange}
 								placeholder="Beacon"
+								id="beacon"
+								name="beacon"
 							/>
 							<Dropdown
 								options={mfOptions}
-								value={communityShopMf}
-								onChange={setCommunityShopMf}
+								value={form.communityShopMf}
+								onChange={handleChange}
 								placeholder="Community Shop MF"
+								id="communityShopMf"
+								name="communityShopMf"
 							/>
 							<Dropdown
 								options={nutcrackerMfOptions}
-								value={nutcrackerMf}
-								onChange={setNutcrackerMf}
+								value={form.nutcrackerMf}
+								onChange={handleChange}
 								placeholder="Nutcracker MF"
+								id="nutcrackerMf"
+								name="nutcrackerMf"
 							/>
 						</div>
 					</div>

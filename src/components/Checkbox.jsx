@@ -7,8 +7,19 @@ const Checkbox = ({
     onChange, 
     label, 
     className,
-    disabled = false 
+    disabled = false,
+    name
 }) => {
+    const handleChange = (e) => {
+        onChange({
+            target: {
+                name: name,
+                type: 'checkbox',
+                checked: e.target.checked
+            }
+        });
+    };
+
     return (
         <label
             className={cn(
@@ -19,9 +30,10 @@ const Checkbox = ({
             <input
                 type="checkbox"
                 checked={checked}
-                onChange={onChange}
+                onChange={handleChange}
                 disabled={disabled}
                 className="sr-only"
+                name={name}
             />
             <div
                 className={cn(
