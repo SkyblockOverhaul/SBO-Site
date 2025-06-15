@@ -2,6 +2,7 @@ import React from "react";
 import MeteorBackground from "@/components/MeteorBackground";
 import StarBackground from "@/components/StarBackground";
 import NavBar from "@/components/NavBar";
+import InputSection from "@/components/MfCalc/InputSection";
 
 const MfCalc = () => {
 	return (
@@ -14,6 +15,9 @@ const MfCalc = () => {
 			<NavBar />
 
 			{/* Main Content */}
+			<main className="h-screen relative z-10">
+				<InputSection />
+			</main>
 		</div>
 	);
 };
