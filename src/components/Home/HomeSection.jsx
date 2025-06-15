@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "@/lib/utils";
-import ScrollIndicator from "@/components/ScrollIndicator";
+import ScrollIndicator from "@/components/global/ScrollIndicator";
 
 const HomeSection = () => {
 	return (

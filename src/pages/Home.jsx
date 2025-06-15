@@ -1,8 +1,8 @@
 import React from "react";
 import { Router } from "react-router-dom";
-import StarBackground from "@/components/StarBackground";
-import MeteorBackground from "@/components/MeteorBackground";
-import NavBar from "@/components/NavBar";
+import StarBackground from "@/components/global/StarBackground";
+import MeteorBackground from "@/components/global/MeteorBackground";
+import NavBar from "@/components/global/NavBar";
 import HomeSection from "@/components/Home/HomeSection";
 import AboutSection from "@/components/Home/AboutSection";
 import ProjectsSection from "@/components/Home/ProjectsSection";

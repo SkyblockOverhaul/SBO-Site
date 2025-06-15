@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "@/lib/utils";
 import { Code, Globe, GraduationCap, ExternalLink } from "lucide-react";
-import ScrollIndicator from "@/components/ScrollIndicator";
+import ScrollIndicator from "@/components/global/ScrollIndicator";
 import DiscordIcon from "@/assets/DiscordIcon";
 import GithubIcon from "@/assets/GithubIcon";
 import PatreonIcon from "@/assets/PatreonIcon";

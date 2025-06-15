@@ -1,7 +1,7 @@
 import React from "react";
-import MeteorBackground from "@/components/MeteorBackground";
-import StarBackground from "@/components/StarBackground";
-import NavBar from "@/components/NavBar";
+import MeteorBackground from "@/components/global/MeteorBackground";
+import StarBackground from "@/components/global/StarBackground";
+import NavBar from "@/components/global/NavBar";
 import InputSection from "@/components/MfCalc/InputSection";
 
 const MfCalc = () => {

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 import MfCalc from "@/pages/MfCalc";
-import ScrollToHash from "@/components/ScrollToHash";
+import ScrollToHash from "@/components/global/ScrollToHash";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 function App() {

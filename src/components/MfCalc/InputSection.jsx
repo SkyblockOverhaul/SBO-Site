@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Dropdown from "@/components/Dropdown";
-import Checkbox from "@/components/Checkbox";
-import Input from "@/components/Input";
+import Dropdown from "@/components/global/Dropdown";
+import Checkbox from "@/components/global/Checkbox";
+import Input from "@/components/global/Input";
 import { Search, Users, Info } from "lucide-react";
 import cn from "@/lib/utils";
 
