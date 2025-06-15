@@ -60,7 +60,7 @@ const NavBar = () => {
 				{/* Mobile Menu Button */}
 				<button
 					onClick={() => setIsMenuOpen((prev) => !prev)}
-					className="md:hidden p-2 text-foreground mr-4 z-50"
+					className="md:hidden p-2 text-foreground z-50"
 					arial-label={isMenuOpen ? "Close menu" : "Open menu"}
 				>
 					{isMenuOpen ? <X size={28} /> : <Menu size={28} />}
