@@ -44,7 +44,7 @@ const ContactSection = () => {
 			<div className="container mx-auto max-w-5xl">
 				<div className="space-y-4 md:space-y-6 bg-card/50 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-border/50 shadow-lg mb-12">
 					<h2 className="text-3xl md:text-4xl font-bold mb-4 text-center select-none">
-						Get In<span className="text-primary"> Touch</span>
+						Get <span className="text-primary"> In</span> Touch
 					</h2>
 					<p className="text-center mb-4 max-w-2xl mx-auto select-none">
 						Want to Contribute to our project or have any questions?

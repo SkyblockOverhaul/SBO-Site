@@ -20,25 +20,19 @@ const AboutSection = () => {
 							Passionate Mod & Web App Developers
 						</h3>
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							We are two students in the IT sector with experience
-							in React, Python, JavaScript, and TypeScript. Being
-							mostly self-taught, we constantly strive to improve
-							our skills and broaden our knowledge.
+							We are two IT students with experience in React,
+							Python, JavaScript, and TypeScript. Mostly
+							self-taught, we continuously improve our skills.
 						</p>
-
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							We're also passionate gamers — especially active in
-							Hypixel SkyBlock, where we're developing a mod to
-							enhance the gameplay experience. Our love for gaming
-							fuels our creativity and inspires us to build tools
-							that truly benefit the community.
+							As avid gamers active in Hypixel SkyBlock, we’re
+							developing a mod to enhance gameplay and support the
+							community.
 						</p>
-
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							Our goal is to create high-quality mods and web
-							applications that improve the gaming experience.
-							We're passionate about what we do and always eager
-							to take on new challenges.
+							Our goal is to create high-quality mods and web apps
+							that improve the gaming experience. We're passionate
+							and eager to take on new challenges.
 						</p>
 
 						<div className="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4 justify-center">

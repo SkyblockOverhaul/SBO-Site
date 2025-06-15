@@ -1,19 +1,17 @@
 import React from "react";
-import ThemeToggle from "@/components/ThemeToggle";
+import { Router } from "react-router-dom";
 import StarBackground from "@/components/StarBackground";
 import MeteorBackground from "@/components/MeteorBackground";
 import NavBar from "@/components/NavBar";
-import HomeSection from "@/components/HomeSection";
-import AboutSection from "@/components/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ContactSection from "@/components/ContactSection";
+import HomeSection from "@/components/Home/HomeSection";
+import AboutSection from "@/components/Home/AboutSection";
+import ProjectsSection from "@/components/Home/ProjectsSection";
+import AppsSection from "@/components/Home/AppsSection";
+import ContactSection from "@/components/Home/ContactSection";
 
 const Home = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-			{/* Theme Toggle Button */}
-			<ThemeToggle />
-
 			{/* Background Effects */}
 			<MeteorBackground />
 			<StarBackground />
@@ -34,6 +32,9 @@ const Home = () => {
 				</div>
 				<div className="min-h-screen md:h-screen md:snap-start">
 					<ProjectsSection />
+				</div>
+				<div className="min-h-screen md:h-screen md:snap-start">
+					<AppsSection />
 				</div>
 				<div className="min-h-screen md:h-screen md:snap-start">
 					<ContactSection />

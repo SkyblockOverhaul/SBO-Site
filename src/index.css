@@ -7,6 +7,7 @@
 
 	--color-primary: hsl(var(--primary));
 	--color-primary-foreground: hsl(var(--primary-foreground));
+	--color-milky: hsl(var(--milky));
 
 	--color-card: hsl(var(--card));
 
@@ -72,7 +73,7 @@
 
 @layer base {
 	:root {
-		--background: 0 40% 95%;
+		--background: 25 25% 87%;
 		--foreground: 222 47% 11%;
 
 		--card: 0 0% 100%;

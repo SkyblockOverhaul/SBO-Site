@@ -1,12 +1,15 @@
 import React from "react";
 import cn from "@/lib/utils";
+import ThemeToggle from "@/components/ThemeToggle";
+
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-	{ name: "Home", path: "#home" },
-	{ name: "About", path: "#about" },
-	{ name: "Projects", path: "#projects" },
-	{ name: "Contact", path: "#contact" },
+	{ name: "Home", path: "/#home" },
+	{ name: "About", path: "/#about" },
+	{ name: "Projects", path: "/#projects" },
+	{ name: "Apps", path: "/#apps" },
+	{ name: "Contact", path: "/#contact" },
 ];
 
 const NavBar = () => {
@@ -51,6 +54,7 @@ const NavBar = () => {
 							{item.name}
 						</a>
 					))}
+					<ThemeToggle />
 				</div>
 
 				{/* Mobile Menu Button */}
@@ -82,6 +86,7 @@ const NavBar = () => {
 								{item.name}
 							</a>
 						))}
+						<ThemeToggle />
 					</div>
 				</div>
 			</div>
