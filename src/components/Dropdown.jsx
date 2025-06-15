@@ -31,7 +31,11 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 			const spaceAbove = buttonRect.top;
 			const menuHeight = 300; // Approximate max height of the menu
 
-			setMenuPosition(spaceBelow < menuHeight && spaceAbove > spaceBelow ? "top" : "bottom");
+			setMenuPosition(
+				spaceBelow < menuHeight && spaceAbove > spaceBelow
+					? "top"
+					: "bottom"
+			);
 		}
 	}, [isOpen]);
 
@@ -57,7 +61,9 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 				)}
 			>
 				<div className="flex items-center gap-2">
-					<span className="text-muted-foreground">{placeholder}:</span>
+					<span className="text-muted-foreground">
+						{placeholder}:
+					</span>
 					<span className="font-medium">
 						{selectedOption ? selectedOption.value : "0"}
 					</span>
@@ -73,7 +79,9 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 			<div
 				className={cn(
 					"absolute z-50 w-full",
-					menuPosition === "bottom" ? "top-full mt-1" : "bottom-full mb-1",
+					menuPosition === "bottom"
+						? "top-full mt-1"
+						: "bottom-full mb-1",
 					"bg-background/95 backdrop-blur-sm",
 					"border border-border/80",
 					"rounded-lg shadow-lg",
@@ -81,7 +89,9 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 					"py-1",
 					"transition-all duration-200",
 					"transform-gpu",
-					isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
+					isOpen
+						? "opacity-100 translate-y-0"
+						: "opacity-0 -translate-y-2 pointer-events-none"
 				)}
 			>
 				<div className="px-2 py-1.5 text-sm text-muted-foreground border-b border-border/80">
@@ -91,7 +101,9 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 					<button
 						key={option.value}
 						onClick={() => {
-							onChange({ target: { name: name, value: option.value } });
+							onChange({
+								target: { name: name, value: option.value },
+							});
 							setIsOpen(false);
 						}}
 						className={cn(
@@ -112,4 +124,4 @@ const Dropdown = ({ options, value, onChange, placeholder, name }) => {
 	);
 };
 
-export default Dropdown; 
+export default Dropdown;

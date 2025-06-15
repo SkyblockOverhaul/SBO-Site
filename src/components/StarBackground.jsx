@@ -22,7 +22,7 @@ const StarBackground = () => {
 
 		window.addEventListener("resize", handleResize);
 		window.addEventListener("mousemove", handleMouseMove);
-		
+
 		return () => {
 			window.removeEventListener("resize", handleResize);
 			window.removeEventListener("mousemove", handleMouseMove);
@@ -48,17 +48,20 @@ const StarBackground = () => {
 
 	const getStarStyle = (star) => {
 		const distance = Math.sqrt(
-			Math.pow(star.x - mousePosition.x, 2) + 
-			Math.pow(star.y - mousePosition.y, 2)
+			Math.pow(star.x - mousePosition.x, 2) +
+				Math.pow(star.y - mousePosition.y, 2)
 		);
-		
+
 		const isNearMouse = distance < 15;
 		let translateX = 0;
 		let translateY = 0;
 
 		if (isNearMouse) {
 			// Calculate direction away from mouse
-			const angle = Math.atan2(star.y - mousePosition.y, star.x - mousePosition.x);
+			const angle = Math.atan2(
+				star.y - mousePosition.y,
+				star.x - mousePosition.x
+			);
 			const force = (15 - distance) / 15; // Stronger effect when closer
 			translateX = Math.cos(angle) * force * 10;
 			translateY = Math.sin(angle) * force * 10;
@@ -82,9 +85,10 @@ const StarBackground = () => {
 		width: "100%",
 		height: "100%",
 		backgroundColor: theme === "dark" ? "white" : "black",
-		boxShadow: theme === "dark"
-			? "0 0 4px rgba(255, 255, 255, 0.6)"
-			: "0 0 4px rgba(0, 0, 0, 0.6)",
+		boxShadow:
+			theme === "dark"
+				? "0 0 4px rgba(255, 255, 255, 0.6)"
+				: "0 0 4px rgba(0, 0, 0, 0.6)",
 	});
 
 	return (
