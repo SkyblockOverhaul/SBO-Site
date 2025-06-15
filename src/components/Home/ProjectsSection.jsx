@@ -96,7 +96,7 @@ const ProjectsSection = () => {
 
 	const projects = {
 		sbo: {
-			title: "SkyblockOverhaul (SBO)",
+			title: "Skyblock Overhaul (SBO)",
 			description:
 				"A feature-rich ChatTriggers module for Minecraft 1.8.9 designed primarily for the Diana event.",
 			stars: data["SBO"]?.stars || 0,
