@@ -40,33 +40,15 @@ const InputSection = () => {
 	};
 
 	// Dropdown options
-	const beaconOptions = [
-		{ value: "0", label: "No Beacon" },
-		{ value: "1", label: "1 MagicFind" },
-		{ value: "2", label: "2 MagicFind" },
-		{ value: "3", label: "3 MagicFind" },
-		{ value: "4", label: "4 MagicFind" },
-		{ value: "5", label: "5 MagicFind" },
-		{ value: "6", label: "6 MagicFind" },
-	];
+	const generateMfOptions = (count, zeroLabel) =>
+		Array.from({ length: count + 1 }, (_, i) => ({
+			value: String(i),
+			label: i === 0 ? zeroLabel : `${i} MagicFind`,
+		}));
 
-	const mfOptions = [
-		{ value: "0", label: "0 Magic Find" },
-		{ value: "1", label: "1 MagicFind" },
-		{ value: "2", label: "2 MagicFind" },
-		{ value: "3", label: "3 MagicFind" },
-		{ value: "4", label: "4 MagicFind" },
-		{ value: "5", label: "5 MagicFind" },
-	];
-
-	const nutcrackerMfOptions = [
-		{ value: "0", label: "No Nutcracker" },
-		{ value: "1", label: "1 MagicFind" },
-		{ value: "2", label: "2 MagicFind" },
-		{ value: "3", label: "3 MagicFind" },
-		{ value: "4", label: "4 MagicFind" },
-		{ value: "5", label: "5 MagicFind" },
-	];
+	const beaconOptions = generateMfOptions(6, "No Beacon");
+	const mfOptions = generateMfOptions(5, "0 Magic Find");
+	const nutcrackerMfOptions = generateMfOptions(5, "No Nutcracker");
 
 	const handleSearch = () => {
 		// Set party size to 0 if empty
