@@ -279,19 +279,12 @@ const ProjectsSection = () => {
 														Install ChatTriggers
 													</li>
 													<li>
-														Run{" "}
-														<code className="bg-muted px-1 rounded">
-															/ct import SBO
-														</code>{" "}
+														Run /ct import sbo
 														in-game
 													</li>
 													<li>
-														Run{" "}
-														<code className="bg-muted px-1 rounded">
-															/sbo
-														</code>{" "}
-														in-game to access the
-														settings menu
+														Run /sbo in-game to
+														access the settings menu
 													</li>
 												</>
 											) : (
@@ -300,11 +293,15 @@ const ProjectsSection = () => {
 														Install ChatTriggers
 													</li>
 													<li>
-														Use{" "}
-														<code className="bg-muted px-1 rounded">
-															/sbopf
-														</code>{" "}
-														to access party finder
+														Run /ct import sbopf
+														in-game or /ct import
+														sbo as its included in
+														SBO
+													</li>
+
+													<li>
+														Use /sbopf to access
+														party finder
 													</li>
 												</>
 											)}
