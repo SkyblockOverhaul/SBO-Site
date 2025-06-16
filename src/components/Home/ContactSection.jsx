@@ -4,7 +4,7 @@ import DiscordIcon from "@/assets/DiscordIcon";
 import emailjs from "@emailjs/browser";
 
 // Initialize EmailJS with your public key
-emailjs.init("61QhiMZBuXwmi7dkF");
+emailjs.init("process.env.EMAIL_KEY");
 const ContactSection = () => {
 	const form = useRef();
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,8 +17,8 @@ const ContactSection = () => {
 
 		try {
 			await emailjs.sendForm(
-				"service_pah268p",
-				"template_8aqmnbw",
+				"process.env.SERVICE_KEY",
+				"process.env.TEMPLATE_KEY",
 				form.current
 			);
 

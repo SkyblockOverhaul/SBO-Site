@@ -58,11 +58,12 @@ const AppsSection = () => {
 						<div className="flex justify-center mt-4">
 							<button
 								className="cosmic-button px-6 py-2 text-sm md:text-base"
-								onClick={() =>
-									handleOpenApp(apps[activeApp].name)
-								}
+								// onClick={() =>
+								// 	handleOpenApp(apps[activeApp].name)
+								// }
 							>
-								Open {apps[activeApp].name}
+								{/* Open {apps[activeApp].name} */}
+								Coming Soon!
 							</button>
 						</div>
 					</div>
