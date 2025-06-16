@@ -1,7 +1,5 @@
 name = "sbo-site"
 compatibility_date = "2025-06-16"
 
-pages_build_output_dir = "./dist"
-
-[build]
-upload.format = "service-worker"
+[assets]
+directory = "./dist"
