@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "@/lib/utils";
 import { Code, Globe, GraduationCap, ExternalLink } from "lucide-react";
-import ScrollIndicator from "@/components/ScrollIndicator";
+import ScrollIndicator from "@/components/global/ScrollIndicator";
 import DiscordIcon from "@/assets/DiscordIcon";
 import GithubIcon from "@/assets/GithubIcon";
 import PatreonIcon from "@/assets/PatreonIcon";
@@ -20,25 +20,19 @@ const AboutSection = () => {
 							Passionate Mod & Web App Developers
 						</h3>
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							We are two students in the IT sector with experience
-							in React, Python, JavaScript, and TypeScript. Being
-							mostly self-taught, we constantly strive to improve
-							our skills and broaden our knowledge.
+							We are two IT students with experience in React,
+							Python, JavaScript, and TypeScript. Mostly
+							self-taught, we continuously improve our skills.
 						</p>
-
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							We're also passionate gamers — especially active in
-							Hypixel SkyBlock, where we're developing a mod to
-							enhance the gameplay experience. Our love for gaming
-							fuels our creativity and inspires us to build tools
-							that truly benefit the community.
+							As avid gamers active in Hypixel SkyBlock, we’re
+							developing a mod to enhance gameplay and support the
+							community.
 						</p>
-
 						<p className="text-foreground/80 text-sm md:text-base select-none">
-							Our goal is to create high-quality mods and web
-							applications that improve the gaming experience.
-							We're passionate about what we do and always eager
-							to take on new challenges.
+							Our goal is to create high-quality mods and web apps
+							that improve the gaming experience. We're passionate
+							and eager to take on new challenges.
 						</p>
 
 						<div className="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4 justify-center">
@@ -50,7 +44,6 @@ const AboutSection = () => {
 							>
 								<DiscordIcon />
 								Discord
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 							<a
 								href="https://github.com/SkyblockOverhaul"
@@ -60,7 +53,6 @@ const AboutSection = () => {
 							>
 								<GithubIcon />
 								Github
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 							<a
 								href="https://www.patreon.com/Skyblock_Overhaul"
@@ -70,13 +62,12 @@ const AboutSection = () => {
 							>
 								<PatreonIcon />
 								Patreon
-								<ExternalLink className="h-3 w-3 md:h-4 md:w-4" />
 							</a>
 						</div>
 					</div>
 
 					<div className="grid grid-cols-1 gap-4 md:gap-6">
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<Code className="h-5 w-5 md:h-6 md:w-6 text-primary"></Code>
@@ -92,7 +83,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<Globe className="h-5 w-5 md:h-6 md:w-6 text-primary"></Globe>
@@ -108,7 +99,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<div className="p-4 md:p-6 card-hover bg-card/30 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
+						<div className="p-4 md:p-6 card-hover bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg rounded-lg">
 							<div className="flex items-start gap-3 md:gap-4">
 								<div className="p-2 md:p-3 rounded-full bg-primary/10">
 									<GraduationCap className="h-5 w-5 md:h-6 md:w-6 text-primary"></GraduationCap>

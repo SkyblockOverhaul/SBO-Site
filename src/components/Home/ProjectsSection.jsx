@@ -17,6 +17,9 @@ const repos = [
 	},
 ];
 
+// Cache duration in milliseconds (1 hour)
+const CACHE_DURATION = 60 * 60 * 1000;
+
 const ProjectsSection = () => {
 	const [activeProject, setActiveProject] = React.useState("sbo");
 	const [data, setData] = React.useState([]);
@@ -24,6 +27,22 @@ const ProjectsSection = () => {
 	React.useEffect(() => {
 		const fetchData = async () => {
 			try {
+				// Check cache first
+				const cachedData = localStorage.getItem("githubData");
+				const cacheTimestamp = localStorage.getItem(
+					"githubDataTimestamp"
+				);
+
+				// If we have valid cached data, use it
+				if (cachedData && cacheTimestamp) {
+					const timestamp = parseInt(cacheTimestamp);
+					if (Date.now() - timestamp < CACHE_DURATION) {
+						setData(JSON.parse(cachedData));
+						return;
+					}
+				}
+
+				// If no valid cache, fetch new data
 				const results = await Promise.all(
 					repos.map(async (repo) => {
 						const [repoRes, langRes] = await Promise.all([
@@ -54,9 +73,21 @@ const ProjectsSection = () => {
 					};
 				});
 
+				// Cache the new data
+				localStorage.setItem("githubData", JSON.stringify(stats));
+				localStorage.setItem(
+					"githubDataTimestamp",
+					Date.now().toString()
+				);
+
 				setData(stats);
 			} catch (err) {
 				console.error("Failed to fetch GitHub data:", err);
+				// If fetch fails, try to use cached data even if expired
+				const cachedData = localStorage.getItem("githubData");
+				if (cachedData) {
+					setData(JSON.parse(cachedData));
+				}
 			}
 		};
 
@@ -65,7 +96,7 @@ const ProjectsSection = () => {
 
 	const projects = {
 		sbo: {
-			title: "SkyblockOverhaul (SBO)",
+			title: "Skyblock Overhaul (SBO)",
 			description:
 				"A feature-rich ChatTriggers module for Minecraft 1.8.9 designed primarily for the Diana event.",
 			stars: data["SBO"]?.stars || 0,
@@ -146,7 +177,7 @@ const ProjectsSection = () => {
 				</div>
 
 				{/* Project Card */}
-				<div className="bg-card/30 backdrop-blur-sm rounded-lg p-4 md:p-8 shadow-lg border border-border/50">
+				<div className="bg-card/50 backdrop-blur-sm rounded-lg p-4 md:p-8 shadow-lg border border-border/50">
 					<div className="space-y-4 md:space-y-6">
 						<div className="flex items-center justify-between">
 							<div className="flex items-center gap-2 md:gap-3">
