@@ -10,6 +10,15 @@ const AppsSection = () => {
 		navigate(`/${appName.toLowerCase()}`);
 	};
 
+	const handleOpenOldCalculator = () => {
+		// Navigate to the old calculator page external website!
+		window.open(
+			"https://magicfindcalculator.pages.dev/mfcalc/",
+			"_blank",
+			"noopener,noreferrer"
+		);
+	};
+
 	const apps = {
 		mfcalc: {
 			name: "MFCalc",
@@ -64,6 +73,12 @@ const AppsSection = () => {
 							>
 								{/* Open {apps[activeApp].name} */}
 								Coming Soon!
+							</button>
+							<button
+								className="cosmic-button px-6 py-2 text-sm md:text-base ml-4"
+								onClick={handleOpenOldCalculator}
+							>
+								Open Old Calculator
 							</button>
 						</div>
 					</div>
