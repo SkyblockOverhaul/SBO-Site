@@ -16,7 +16,7 @@ function App() {
 					{/* Example: <Route path="/" element={<Home />} /> */}
 					<Route path="/" element={<Home />} />
 					<Route path="*" element={<NotFound />} />
-					{/* <Route path="/mfcalc" element={<MfCalc />} /> */}
+					<Route path="/mfcalc" element={<MfCalc />} />
 					{/* Add more routes as needed */}
 				</Routes>
 			</BrowserRouter>
