@@ -19,7 +19,7 @@ const NavBar = () => {
 			<div className="container flex items-center justify-between px-6">
 				<a className="text-2xl font-bold text-primary flex items-center">
 					<span className="relative z-10 select-none">
-						Sykblock Overhaul
+						Skyblock Overhaul
 					</span>
 				</a>
 
