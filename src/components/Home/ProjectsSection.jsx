@@ -15,6 +15,7 @@ const repos = [
 		name: "SBOPF",
 		url: "https://api.github.com/repos/SkyblockOverhaul/SBOPF",
 	},
+	{ name: "SBO-Kotlin", url: "https://api.github.com/repos/SkyblockOverhaul/SBO-Kotlin"}
 ];
 
 // Cache duration in milliseconds (1 hour)
@@ -58,7 +59,6 @@ const ProjectsSection = () => {
 							forks: repoRes.forks_count,
 							languages: [
 								...Object.keys(langRes),
-								"ChatTriggers",
 							],
 						};
 					})
@@ -134,6 +134,27 @@ const ProjectsSection = () => {
 			],
 			link: "https://github.com/SkyblockOverhaul/SBOPF",
 		},
+		sbokotlin: {
+			title: "SBO-Kotlin",
+			description:
+				"A Kotlin rewrite of the original SBO module, aiming to improve performance, maintainability, and add new features.",
+			stars: data["SBO-Kotlin"]?.stars || 0,
+			forks: data["SBO-Kotlin"]?.forks || 0,
+			languages: data["SBO-Kotlin"]?.languages || [],
+			features: [
+				"Burrow Detection & Guessing for Diana",
+				"Diana Stats Tracker (loot, kills, MF)",
+				"Party Commands for drops & stats",
+				"Bobber & Legion Player Counters",
+				"Customizable GUI & HUD Elements",
+				"Loot Announcer with Party Integration",
+				"Waypoint & Line System for Navigation",
+				"Sound & Visual Alert System",
+				"Pickup Log & Crown Tracking",
+				"Advanced Party Management Tools",
+			],
+			link: "https://github.com/SkyblockOverhaul/SBO-Kotlin"
+		},
 	};
 
 	return (
@@ -171,6 +192,19 @@ const ProjectsSection = () => {
 					>
 						<span className="relative z-10">SBOPF</span>
 						{activeProject === "sbopf" && (
+							<div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 animate-pulse-subtle" />
+						)}
+					</button>
+					<button
+						onClick={() => setActiveProject("sbokotlin")}
+						className={`px-4 md:px-6 py-2 rounded-md transition-all duration-300 text-sm md:text-base relative overflow-hidden group ${
+							activeProject === "sbokotlin"
+								? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+								: "bg-muted hover:bg-muted/80 hover:scale-105 active:scale-95"
+						}`}
+					>
+						<span className="relative z-10">SBO-Kotlin</span>
+						{activeProject === "sbokotlin" && (
 							<div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 animate-pulse-subtle" />
 						)}
 					</button>
@@ -287,7 +321,7 @@ const ProjectsSection = () => {
 														access the settings menu
 													</li>
 												</>
-											) : (
+											) : activeProject === "sbopf" ? (
 												<>
 													<li>
 														Install ChatTriggers
@@ -302,6 +336,20 @@ const ProjectsSection = () => {
 													<li>
 														Use /sbopf to access
 														party finder
+													</li>
+												</>
+											) : (
+												<>
+													<li>
+														Install Dependencies (Fabric API, Fabric Language Kotlin, Mod Menu)
+													</li>
+													<li>
+														Install SkyblockOverhaul (SBO-Kotlin)
+														from Modrinth or git releases
+													</li>
+													<li>
+														launch the game and use /sbo in-game to
+														access the settings menu
 													</li>
 												</>
 											)}
